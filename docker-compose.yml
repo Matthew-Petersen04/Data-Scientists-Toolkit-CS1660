@@ -7,23 +7,14 @@ services:
     volumes: 
         - /tmp/.X11-unix:/tmp/.X11-unix
         - ~/.Xauthority:/root/.Xauthority
-        - .:/root/working
     logging:
       driver: "none"
-  #redis:
-  #  image: "redis:alpine"
-  #  logging:
-  #    driver: "none"
-  #  volumes:
-  #    - /var/run/docker.sock:/var/run/docker.sock
   rstudio:
     image: "rocker/rstudio"
     ports:
       - "8787:8787"
     logging:
       driver: "none"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   git:
     image: "gitbucket/gitbucket"
     ports:
@@ -37,8 +28,6 @@ services:
     ports:
       - "6081:6080"
       - "5900:5900"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   jupyter-notebook:
     image: "jupyter/scipy-notebook:17aba6048f44"
     command: ['start-notebook.sh', "--NotebookApp.token=''", "--NotebookApp.password=''"]
@@ -64,40 +53,9 @@ services:
   tensorflow:
     image: "tensorflow/tensorflow:latest-jupyter"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
       - ~/notebooks:/tf/notebooks
     ports:
       - "8890:8888"
-#  tableau:
-#    image: "pvtmert/tableau"
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#      - /sys/fs/cgroup:/sys/fs/cgroup
-#      - ./run:/run:rw
-#    restart: "always"
-#    ports:
-#      - "80:80"
-#      - "8850:8850"
-#  sonarqube:
-#    image: "sonarqube"
-#    logging:
-#      driver: "none"
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#  sonarscloud:
-#    image: "sonarsource/sonar-scanner-cli"
-#    environment:
-#      SONAR_HOST_URL: "http://localhost:9000"
-#    logging:
-#      driver: "none"
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
-#  hadoop:
-#    image: "bde2020/hadoop-datanode"
-#    logging:
-#      driver: "none"
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
   apachespark:
     image: "alexcoppe/pyspark"
     ports:
@@ -108,10 +66,4 @@ services:
     image: "v4tech/markdown-editor"
     ports:
       - "12345:80"
-#  orange:
-#    image: "syhily/orange"
-#    ports:
-#      - "3306:3306"
-#    logging:
-#      driver: "none"
      
