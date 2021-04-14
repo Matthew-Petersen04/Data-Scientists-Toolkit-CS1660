@@ -37,15 +37,15 @@ services:
       - "5900:5900"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#  jupyter-notebook:
-#   image: "jupyter/scipy-notebook:17aba6048f44"
-#    command: ['start-notebook.sh', "--NotebookApp.token=''", "--NotebookApp.password=''"]
-#    ports:
-#      - "8888:8888"
-#    logging:
-#      driver: "none"
-#    volumes:
-#      - /var/run/docker.sock:/var/run/docker.sock
+  jupyter-notebook:
+    image: "jupyter/scipy-notebook:17aba6048f44"
+    command: ['start-notebook.sh', "--NotebookApp.token=''", "--NotebookApp.password=''"]
+    ports:
+      - "8888:8888"
+    logging:
+      driver: "none"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   visual-studio:
     image: "beneventsur/xubuntu:vscode-1.44.2"
     ports:
@@ -79,7 +79,7 @@ services:
       driver: "none"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  sonarscanner:
+  sonarscloud:
     image: "sonarsource/sonar-scanner-cli"
     environment:
       SONAR_HOST_URL: "http://localhost:9000"
@@ -93,5 +93,10 @@ services:
       driver: "none"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  apachespark:
-    image: "mesosphere/spark-dev"
+#  apachespark:
+#    image: "mesosphere/spark-dev"
+  markdown:
+    image: "v4tech/markdown-editor"
+    ports:
+      - "12345:80"
+     

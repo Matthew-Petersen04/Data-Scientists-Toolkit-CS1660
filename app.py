@@ -16,6 +16,10 @@ def open_jupyter():
     
 def open_spyder():
     wb.open_new('http://host.docker.internal:6081/vnc.html')
+    
+def open_markdown():
+    wb.open_new('http://host.docker.internal:12345/')
+
 
 root = tk.Tk()
 frame = tk.Frame(root)
@@ -26,65 +30,65 @@ RStudioButton = tk.Button(frame,
                    command=open_rstudio)
 RStudioButton.pack(side = tk.TOP)
 
-RStudioButton = tk.Button(frame,
+SpyderButton = tk.Button(frame,
                    text="Spyder",
                    command=open_spyder)
-RStudioButton.pack(side = tk.TOP)
+SpyderButton.pack(side = tk.TOP)
 
-RStudioButton = tk.Button(frame,
+IBMSASButton = tk.Button(frame,
                    text="IBM SAS",
                    command=open_rstudio)
-RStudioButton.pack(side = tk.TOP)
+IBMSASButton.pack(side = tk.TOP)
 
-RStudioButton = tk.Button(frame,
+GitBucketButton = tk.Button(frame,
                    text="GitBucket",
                    command=open_gitbucket)
-RStudioButton.pack(side = tk.TOP)
+GitBucketButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+JupyterButton = tk.Button(frame,
                         text="Jupyter Notebook",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+JupyterButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+OrangeButton = tk.Button(frame,
                         text="Orange",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+OrangeButton.pack(side = tk.TOP)
 
 VisualStudioButton = tk.Button(frame,
                         text="Visual Studio Code IDE",
                         command=open_vs)
 VisualStudioButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+HadoopButton = tk.Button(frame,
                         text="Apache Hadoop",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+HadoopButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+SparkButton = tk.Button(frame,
                         text="Apache Spark",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+SparkButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+TableauButton = tk.Button(frame,
                         text="Tableau",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+TableauButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+SonarButton = tk.Button(frame,
                         text="SonarCloud",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+SonarButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+TensorflowButton = tk.Button(frame,
                         text="Tensorflow",
                         command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+TensorflowButton.pack(side = tk.TOP)
 
-VisualStudioButton = tk.Button(frame,
+MarkdownButton = tk.Button(frame,
                         text="Markdown",
-                        command=open_jupyter)
-VisualStudioButton.pack(side = tk.TOP)
+                        command=open_markdown)
+MarkdownButton.pack(side = tk.TOP)
 
 
 root.mainloop()
