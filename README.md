@@ -19,6 +19,6 @@ Special Instructions:
 3. For tensorflow the token is generated in cmd and needs to be pasted into the token/password section.
 
 A walkthrough can be found at the following link:
-https://www.youtube.com/watch?v=-cKnfjVS1Ak
+https://youtu.be/kpXyqzV-xn8
 
 Thank you for viewing!
