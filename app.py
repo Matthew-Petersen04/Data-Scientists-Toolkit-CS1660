@@ -19,6 +19,12 @@ def open_spyder():
     
 def open_markdown():
     wb.open_new('http://host.docker.internal:12345/')
+    
+def open_tensorflow():
+    wb.open_new('http://host.docker.internal:8890/')
+    
+def open_spark():
+    wb.open_new('http://host.docker.internal:8889/')
 
 
 root = tk.Tk()
@@ -67,7 +73,7 @@ HadoopButton.pack(side = tk.TOP)
 
 SparkButton = tk.Button(frame,
                         text="Apache Spark",
-                        command=open_jupyter)
+                        command=open_spark)
 SparkButton.pack(side = tk.TOP)
 
 TableauButton = tk.Button(frame,
@@ -82,7 +88,7 @@ SonarButton.pack(side = tk.TOP)
 
 TensorflowButton = tk.Button(frame,
                         text="Tensorflow",
-                        command=open_jupyter)
+                        command=open_tensorflow)
 TensorflowButton.pack(side = tk.TOP)
 
 MarkdownButton = tk.Button(frame,

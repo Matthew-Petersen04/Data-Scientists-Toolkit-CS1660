@@ -60,19 +60,22 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
   tensorflow:
-    image: "tensorflow/tfx"
-    logging:
-      driver: "none"
+    image: "tensorflow/tensorflow:latest-jupyter"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-  tableau:
-    image: "pvtmert/tableau"
-    logging:
-      driver: "none"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/notebooks:/tf/notebooks
     ports:
-      - "8316:8316"
+      - "8890:8888"
+  tableau:
+    image: "dimtoolsinc/tableau-server:2018-2-3"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /sys/fs/cgroup:/sys/fs/cgroup
+      - ./run:/run:rw
+    restart: "always"
+    ports:
+      - "80:80"
+      - "8850:8850"
   sonarqube:
     image: "sonarqube"
     logging:
@@ -93,8 +96,10 @@ services:
       driver: "none"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-#  apachespark:
-#    image: "mesosphere/spark-dev"
+  apachespark:
+    image: "alexcoppe/pyspark"
+    ports:
+      - "8889:8889"
   markdown:
     image: "v4tech/markdown-editor"
     ports:
