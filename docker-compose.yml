@@ -21,8 +21,6 @@ services:
       - "8080:8080"
     logging:
       driver: "none"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   spyder:
     image: "compdatasci/spyder-desktop"
     ports:
@@ -48,8 +46,6 @@ services:
       HEIGHT: 1080
     logging:
       driver: "none"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   tensorflow:
     image: "tensorflow/tensorflow:latest-jupyter"
     volumes:
