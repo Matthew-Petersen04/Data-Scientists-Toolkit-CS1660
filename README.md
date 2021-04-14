@@ -10,8 +10,9 @@ In order for this project to run some prerequisites will need to be met:
 4. In the command line: docker-compose build
 
 Once this is completed the project can be run by:
-1. In the command line: docker-compose up
-2. This should launch the data scientist's toolbox GUI.
+1. In the command line: docker-compose up          
+   *(sometimes the visual studio container does not work, it looks like something is leaving orphans that I cannot figure out, if so try docker-compose up --remove-orphans       instead)*
+3. This should launch the data scientist's toolbox GUI.
 
 Special Instructions:
 1. For Spyder the password is randomly generated and can be found in cmd.
