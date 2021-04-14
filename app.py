@@ -1,6 +1,5 @@
 import tkinter as tk
 import webbrowser as wb
-import subprocess
     
 
 def open_rstudio():
@@ -26,10 +25,6 @@ def open_tensorflow():
     
 def open_spark():
     wb.open_new('http://host.docker.internal:8889/')
-
-#def open_tableau():
-#    subrocess.call("docker", "exec", "-it", "course_project_tableau_1", "bash") 
-
 
 root = tk.Tk()
 frame = tk.Frame(root)
