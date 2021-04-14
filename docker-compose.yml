@@ -30,8 +30,6 @@ services:
       - "8888:8888"
     logging:
       driver: "none"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   visual-studio:
     image: "beneventsur/xubuntu:vscode-1.44.2"
     ports:
