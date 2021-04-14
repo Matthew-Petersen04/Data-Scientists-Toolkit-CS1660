@@ -4,9 +4,6 @@ services:
     build: .
     environment: 
         DISPLAY: 100.64.0.206:0.0
-    volumes: 
-        - /tmp/.X11-unix:/tmp/.X11-unix
-        - ~/.Xauthority:/root/.Xauthority
     logging:
       driver: "none"
   rstudio:
